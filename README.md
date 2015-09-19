@@ -1,2 +1,2 @@
 # core
-A collection of core classes for the coreplex packges.
+A collection of core classes for the coreplex packages.

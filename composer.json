@@ -1,0 +1,29 @@
+{
+    "name": "coreplex/core",
+    "description": "A collection of core classes for the coreplex packages.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Jennings",
+            "email": "michael.jennings91@gmail.com"
+        }
+    ],
+    "require": {},
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coreplex\\Core\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Coreplex\\Core\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*"
+    },
+    "minimum-stability": "dev"
+}
