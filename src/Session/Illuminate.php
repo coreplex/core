@@ -89,6 +89,6 @@ class Illuminate implements Session
      */
     protected function getSessionKey($key)
     {
-        return $this->config['session']['key'] . '.' . $key;
+        return $this->config['key'] . '.' . $key;
     }
 }

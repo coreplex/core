@@ -37,11 +37,11 @@ class Native implements Session
 
         if ($this->initialLoad) {
             if (
-                isset($_SESSION[$this->config['session']['key']]) &&
-                isset($_SESSION[$this->config['session']['key']]['flash'])
+                isset($_SESSION[$this->config['key']]) &&
+                isset($_SESSION[$this->config['key']]['flash'])
             ) {
-                $this->flash = $_SESSION[$this->config['session']['key']]['flash'];
-                unset($_SESSION[$this->config['session']['key']]['flash']);
+                $this->flash = $_SESSION[$this->config['key']]['flash'];
+                unset($_SESSION[$this->config['key']]['flash']);
             }
             $this->initialLoad = false;
         }
@@ -81,7 +81,7 @@ class Native implements Session
      */
     public function put($key, $value)
     {
-        return $_SESSION[$this->config['session']['key']][$key] = $value;
+        return $_SESSION[$this->config['key']][$key] = $value;
     }
 
     /**
@@ -92,10 +92,10 @@ class Native implements Session
     public function forget($key)
     {
         if (
-            isset($_SESSION[$this->config['session']['key']]) &&
-            isset($_SESSION[$this->config['session']['key']][$key])
+            isset($_SESSION[$this->config['key']]) &&
+            isset($_SESSION[$this->config['key']][$key])
         ) {
-            unset($_SESSION[$this->config['session']['key']][$key]);
+            unset($_SESSION[$this->config['key']][$key]);
         }
 
         if (isset($this->flash[$key])) {
@@ -111,7 +111,7 @@ class Native implements Session
      */
     public function flash($key, $value)
     {
-        $_SESSION[$this->config['session']['key']]['flash'][$key] = $value;
+        $_SESSION[$this->config['key']]['flash'][$key] = $value;
         $this->flash[$key] = $value;
     }
 
@@ -122,7 +122,7 @@ class Native implements Session
      */
     protected function getSessionData()
     {
-        $data = isset($_SESSION[$this->config['session']['key']]) ? $_SESSION[$this->config['session']['key']] : [];
+        $data = isset($_SESSION[$this->config['key']]) ? $_SESSION[$this->config['key']] : [];
 
         return array_merge($data, $this->flash);
     }
