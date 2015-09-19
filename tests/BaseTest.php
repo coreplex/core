@@ -3,8 +3,9 @@
 namespace Coreplex\Core\Tests;
 
 use Coreplex\Core\Session\Native;
+use PHPUnit_Framework_TestCase;
 
-class BaseTest
+class BaseTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Get a session instance.
@@ -28,5 +29,10 @@ class BaseTest
         }
 
         return $this->config;
+    }
+
+    public function testCommon()
+    {
+        //
     }
 }
