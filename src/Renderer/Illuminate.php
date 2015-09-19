@@ -4,7 +4,7 @@ namespace Coreplex\Core\Renderer;
 
 use Coreplex\Core\Contracts\Renderer;
 use Coreplex\Core\Exceptions\ViewNotFoundException;
-use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\Factory;
 
 class Illuminate implements Renderer
 {
@@ -15,7 +15,7 @@ class Illuminate implements Renderer
      */
     protected $view;
 
-    public function __construct(View $view)
+    public function __construct(Factory $view)
     {
         $this->view = $view;
     }
