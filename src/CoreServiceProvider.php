@@ -23,7 +23,7 @@ class CoreServiceProvider extends ServiceProvider
             __DIR__ . '/../config/coreplex.php' => config_path('coreplex.php')
         ]);
 
-        $this->mergeConfigFrom(__DIR__.'/../config/coreplex.php', 'coreplex');
+        $this->mergeConfigFrom(__DIR__ . '/../config/coreplex.php', 'coreplex');
     }
 
     /**
@@ -35,12 +35,13 @@ class CoreServiceProvider extends ServiceProvider
     {
         $config = config('coreplex');
 
-        $this->app->singleton('Coreplex\Core\Contracts\Renderer', function($app) use ($config) {
+        $this->app->singleton('Coreplex\Core\Contracts\Renderer', function ($app) use ($config) {
             return (new ReflectionClass($config['renderer']['driver']))->newInstanceArgs($app['view']);
         });
 
-        $this->app->singleton('Coreplex\Core\Contracts\Session', function($app) use ($config) {
-            return (new ReflectionClass($config['session']['driver']))->newInstanceArgs($config['session']);
+        $this->app->singleton('Coreplex\Core\Contracts\Session', function ($app) use ($config) {
+            return (new ReflectionClass($config['session']['driver']))->newInstanceArgs($config['session'],
+                $app['session.store']);
         });
 
         $this->app->alias('Coreplex\Core\Contracts\Renderer', 'coreplex.core.renderer');

@@ -21,7 +21,7 @@ class Illuminate implements Session
      */
     protected $config;
 
-    public function __construct(Store $session, array $config)
+    public function __construct(array $config, Store $session)
     {
         $this->session = $session;
         $this->config = $config;
