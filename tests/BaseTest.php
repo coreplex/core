@@ -3,7 +3,9 @@
 namespace Coreplex\Core\Tests;
 
 use Coreplex\Core\Session\Native;
+use Illuminate\Session\Store;
 use PHPUnit_Framework_TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NullSessionHandler;
 
 class BaseTest extends PHPUnit_Framework_TestCase
 {
@@ -15,6 +17,11 @@ class BaseTest extends PHPUnit_Framework_TestCase
     protected function session()
     {
         return new Native($this->config()['session']);
+    }
+
+    protected function illuminateSession()
+    {
+        return new Store($this->app['config']['session.cookie'], new NullSessionHandler());
     }
 
     /**
