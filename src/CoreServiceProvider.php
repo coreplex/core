@@ -15,6 +15,18 @@ class CoreServiceProvider extends ServiceProvider
     protected $defer = true;
 
     /**
+     * Boot the config files.
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/coreplex.php' => config_path('coreplex.php')
+        ]);
+
+        $this->mergeConfigFrom(__DIR__.'/../config/coreplex.php', 'coreplex');
+    }
+
+    /**
      * Register the service provider.
      *
      * @return void
