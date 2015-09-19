@@ -21,14 +21,15 @@ class Native implements Renderer
         if ( ! file_exists($view)) {
             throw new ViewNotFoundException("No file found at '{$view}'");
         }
-        extract($data);
-        include($view);
-        // Get the content
-        $content = ob_get_contents();
-        // Clear the output buffer
-        ob_end_clean();
 
-        // Return the content
-        return $content;
+        ob_start();
+
+        if ( ! empty($data)) {
+            extract($data);
+        }
+
+        include($view);
+
+        return ob_get_clean();
     }
 }
