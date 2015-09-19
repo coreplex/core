@@ -64,7 +64,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
      */
     protected function illuminateSession()
     {
-        return new Store($this->app['config']['session.cookie'], new NullSessionHandler());
+        return new Store($this->config()['session']['key'], new NullSessionHandler());
     }
 
     /**
