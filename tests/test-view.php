@@ -1,3 +1,3 @@
 hello world!
 
-<p><?php echo $foo; ?></p>
+<p><?php echo isset($foo) ? $foo : ''; ?></p>
