@@ -1,4 +1,4 @@
-# Core
+# Core [![Build Status](https://travis-ci.org/coreplex/core.svg?branch=master)](https://travis-ci.org/coreplex/core)
 A collection of core classes for the coreplex packages.
 
 - [Installation](#installation)
