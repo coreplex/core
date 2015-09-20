@@ -40,8 +40,8 @@ class CoreServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton('Coreplex\Core\Contracts\Session', function ($app) use ($config) {
-            return (new ReflectionClass($config['session']['driver']))->newInstanceArgs($config['session'],
-                $app['session.store']);
+            return (new ReflectionClass($config['session']['driver']))->newInstanceArgs([$config['session'],
+                $app['session.store']]);
         });
 
         $this->app->alias('Coreplex\Core\Contracts\Renderer', 'coreplex.core.renderer');
