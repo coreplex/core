@@ -1,6 +1,16 @@
 # Core
 A collection of core classes for the coreplex packages.
 
+- [Installation](#installation)
+    - [Laravel 5 Integration](#laravel-5-integration)
+- [Using the Renderer](#using-the-renderer)
+    - [Rendering Templates](#rendering-templates)
+- [Using the Session](#using-the-session)
+    - [Add Item](#add-item)
+    - [Getting Items](#getting-items)
+    - [Removing Items](#removing-items)
+    
+
 ## Installation
 
 This package requires PHP 5.4+, and includes a Laravel 5 Service Provider.
