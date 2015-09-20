@@ -1,4 +1,4 @@
-# Core [![Build Status](https://travis-ci.org/coreplex/core.svg?branch=master)](https://travis-ci.org/coreplex/core)
+# Core [![Build Status](https://travis-ci.org/coreplex/core.svg?branch=master)](https://travis-ci.org/coreplex/core) [![Latest Stable Version](https://poser.pugx.org/coreplex/core/v/stable)](https://packagist.org/packages/coreplex/core) [![License](https://poser.pugx.org/coreplex/core/license)](https://packagist.org/packages/coreplex/core)
 A collection of core classes for the coreplex packages.
 
 - [Installation](#installation)
