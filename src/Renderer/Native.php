@@ -7,6 +7,11 @@ use Coreplex\Core\Exceptions\ViewNotFoundException;
 
 class Native implements Renderer
 {
+    public function __construct()
+    {
+        //
+    }
+    
     /**
      * Render the provided view to a string. Optionally pass an array of data
      * to be passed to the view.
